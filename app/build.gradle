@@ -1,0 +1,99 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.wenping.kingtvapp"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+//    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //support包
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:cardview-v7:26.1.0'
+
+    testCompile 'junit:junit:4.12'
+
+    //mvp.第三方库
+    compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
+    compile 'com.hannesdorfmann.mosby:viewstate:2.0.1'
+
+    //retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+
+    //rxjava
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.3.4'
+
+    //easyRecyclerView
+    compile 'com.jude:easyrecyclerview:4.3.7'
+
+    //glide
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.8.1'
+//    apt 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    //集成dagger2
+    compile 'com.google.dagger:dagger:2.9'
+
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+
+    //集成greenDao
+    compile 'org.greenrobot:greendao:3.2.0'
+    provided 'org.greenrobot:greendao-generator:3.2.0'
+
+    //circleimageview
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+
+    //baseActivity
+    compile 'com.king.base:base:2.0'
+//    compile 'com.king.view:flutteringlayout:1.1.0'
+    compile 'com.king.thread:nevercrash:1.0.0'
+
+    //banner
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+
+    compile 'com.qiniu:happy-dns:0.2.+'
+    //optional, help to generate the final applicatio
+
+    //    provided('com.tencent.tinker:tinker-android-anno:1.7.7')
+
+    //tinker's main Android lib
+
+    //    compile 'com.tencent.tinker:tinker-android-lib:1.7.7'
+    // 多dex配置
+    compile 'com.android.support:multidex:1.0.1'
+    //sdk
+    compile 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    //ndk
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+
+
+}
